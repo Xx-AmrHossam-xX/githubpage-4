@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Switch, Route, Link } from "react-router-dom";
 
 export default function App (){
+  const [ x, setX ] = useState(0);
+  const [ y, setY ] = useState(0);
+
+  useEffect(() => {
+    setX(window.innerWidth);
+    setY(window.innerHeight);
+  }, []);
   return (
     <div>
+      <h2>{x}</h2>
+      <h2>{y}</h2>
       <nav>
         <ul>
           <li>
